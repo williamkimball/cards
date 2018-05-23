@@ -23,7 +23,7 @@ document.querySelector("#createBtn").addEventListener("click", function(){
     
     document.querySelectorAll(".deleteBtn").forEach(function(element){
         element.addEventListener("click", function (){
-                event.target.parentNode.innerHTML = "";
+                event.target.parentNode.remove();
              });
     }
 );

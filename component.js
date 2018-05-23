@@ -16,7 +16,7 @@ document.querySelector("#createBtn").addEventListener("click", function(){
     mainDiv.className = "card";
     
     //function for creating the first color input element
-    function input1()  {
+    function colorInput1()  {
         let input1 = document.createElement("input");
         input1.className = "backColor";
         input1.type = "color";
@@ -25,7 +25,7 @@ document.querySelector("#createBtn").addEventListener("click", function(){
         return input1;
     }
     //function for creating the second color input element
-    function input2() {
+    function colorInput2() {
         let input2 = document.createElement("input");
         input2.className = "fontColor";
         input2.type = "color";
@@ -36,25 +36,25 @@ document.querySelector("#createBtn").addEventListener("click", function(){
 
     //function for creating the delete button
     function deleteButton() {
-        let deleteButton = document.createElement("button");
-        deleteButton.className = "deleteBtn";
-        deleteButton.textContent = "Delete Card";
-        deleteButton.addEventListener("click", function (){
+        let dB = document.createElement("button");
+        dB.className = "deleteBtn";
+        dB.textContent = "Delete Card";
+        dB.addEventListener("click", function (){
             event.target.parentNode.remove();
         });
-        return deleteButton;
+        return dB;
     }
     //function for creating the inner text content of the card
     function cardDiv() {
-        let cardDiv = document.createElement('div');
-        cardDiv.textContent = `${document.querySelector("#createInput").value}`;
-        return cardDiv;
+        let cardyD = document.createElement('div');
+        cardyD.textContent = `${document.querySelector("#createInput").value}`;
+        return cardyD;
     }
 
     //go through and append each element in the proper place to show up correctly in the DOM
     document.querySelector("#cardSpot").appendChild(mainDiv);
-    mainDiv.appendChild(input1());
-    mainDiv.appendChild(input2());
+    mainDiv.appendChild(colorInput1());
+    mainDiv.appendChild(colorInput2());
     mainDiv.appendChild(deleteButton());
     mainDiv.appendChild(cardDiv());
 

@@ -11,14 +11,22 @@ document.querySelector("#createBtn").addEventListener("click", function(){
         document.querySelector(".card").style.color = event.target.value;
 }
 
-    document.querySelector(".backColor").addEventListener("change", changeBackColor);
-    document.querySelector(".fontColor").addEventListener("change", changeFontColor);
+    document.querySelectorAll(".backColor").forEach(function(element){
+        element.addEventListener("change", changeBackColor);
+    }
+    )
+             
+    document.querySelectorAll(".fontColor").forEach(function(element){
+        element.addEventListener("change", changeFontColor)
+    }
+             );
+    
+
 
     document.querySelectorAll(".deleteBtn").forEach(function(element){
-        console.log(element)
+        element.addEventListener("click", function (){
+                event.target.parentNode.innerHTML = "";
+             });
     }
 );
 })
-// .addEventListener("click", function (){
-//     document.querySelector(`#cardSpot`).innerHTML = "";
-// });

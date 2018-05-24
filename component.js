@@ -49,7 +49,7 @@ document.querySelector("#createBtn").addEventListener("click", function () {
     //function for creating the inner text content of the card
     function cardDiv() {
         let cardyD = document.createElement('div');
-        cardyD.textContent = `${document.querySelector("#createInput").value}`;
+        cardyD.textContent = document.querySelector("#createInput").value;
         return cardyD;
     }
 

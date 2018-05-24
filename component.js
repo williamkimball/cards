@@ -1,22 +1,26 @@
 //when the create button is pressed in the html, this block of code will run, creating a card and populating it with the various elements in order to make it able to dynamically change colors, and show text input.
-document.querySelector("#createBtn").addEventListener("click", function(){
+document.querySelector("#createBtn").addEventListener("click", function () {
 
     //function for changing the background color
     let changeBackColor = () => {
         event.target.parentNode.style.backgroundColor = event.target.value;
-        }
-    
+    }
+
     //function for changing the font color
     let changeFontColor = () => {
         event.target.parentNode.style.color = event.target.value;
+    }
+    //function for deleting the card
+    let deletebutton = () => {
+        event.target.parentNode.remove();
     }
 
     //create the wrapper div
     let mainDiv = document.createElement("div");
     mainDiv.className = "card";
-    
+
     //function for creating the first color input element
-    function colorInput1()  {
+    function colorInput1() {
         let input1 = document.createElement("input");
         input1.className = "backColor";
         input1.type = "color";
@@ -39,9 +43,7 @@ document.querySelector("#createBtn").addEventListener("click", function(){
         let dB = document.createElement("button");
         dB.className = "deleteBtn";
         dB.textContent = "Delete Card";
-        dB.addEventListener("click", function (){
-            event.target.parentNode.remove();
-        });
+        dB.addEventListener("click", deletebutton);
         return dB;
     }
     //function for creating the inner text content of the card

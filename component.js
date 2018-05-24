@@ -16,8 +16,8 @@ document.querySelector("#createBtn").addEventListener("click", function () {
     }
 
     //create the wrapper div
-    let mainDiv = document.createElement("div");
-    mainDiv.className = "card";
+    let card = document.createElement("div");
+    card.className = "card";
 
     //function for creating the first color input element
     function colorInput1() {
@@ -54,10 +54,10 @@ document.querySelector("#createBtn").addEventListener("click", function () {
     }
 
     //go through and append each element in the proper place to show up correctly in the DOM
-    document.querySelector("#cardSpot").appendChild(mainDiv);
-    mainDiv.appendChild(colorInput1());
-    mainDiv.appendChild(colorInput2());
-    mainDiv.appendChild(deleteButton());
-    mainDiv.appendChild(cardDiv());
+    document.querySelector("#cardSpot").appendChild(card);
+    card.appendChild(colorInput1());
+    card.appendChild(colorInput2());
+    card.appendChild(deleteButton());
+    card.appendChild(cardDiv());
 
 });
